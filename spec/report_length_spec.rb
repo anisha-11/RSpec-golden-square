@@ -4,4 +4,9 @@ RSpec.describe "report_length method" do
         result = report_length("hello")
         expect(result).to eq "This string was 5 characters long."
     end
+
+    it "returns message of string with a space inbetween" do 
+        result = report_length("hello Anisha")
+        expect(result).to eq "This string was 12 characters long."
+    end
 end
