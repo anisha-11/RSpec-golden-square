@@ -13,4 +13,10 @@ RSpec.describe StringBuilder do
         result = string_builder.output
         expect(result).to eq "Hi"
     end 
+
+    it "returns the string length" do
+        string_builder = StringBuilder.new
+        result = string_builder.size
+        expect(result).to eq 0
+    end
 end
