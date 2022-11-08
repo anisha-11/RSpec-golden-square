@@ -6,4 +6,11 @@ RSpec.describe StringBuilder do
         result = string_builder.output
         expect(result).to eq "" 
     end
+
+    it "adds a string to another string" do
+        string_builder = StringBuilder.new
+        string_builder.add("Hi")
+        result = string_builder.output
+        expect(result).to eq "Hi"
+    end 
 end
