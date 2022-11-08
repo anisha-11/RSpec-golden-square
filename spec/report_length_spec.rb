@@ -9,4 +9,10 @@ RSpec.describe "report_length method" do
         result = report_length("hello Anisha")
         expect(result).to eq "This string was 12 characters long."
     end
+
+    it "returns message of string with punctuation" do
+        result = report_length("Hello!")
+        expect(result).to eq "This string was 6 characters long."
+    end
+    
 end
