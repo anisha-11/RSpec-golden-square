@@ -14,4 +14,11 @@ RSpec.describe "reading_time method" do
     text = arr.join(" ")
     expect(reading_time(text)).to eq "2.5 minutes"
   end
+
+  it "returns 60 seconds when input is 200 words" do
+    arr = []
+    200.times { arr.push("one") }
+    text = arr.join(" ")
+    expect(reading_time(text)).to eq "60 seconds"
+  end
 end
