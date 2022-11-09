@@ -6,5 +6,12 @@ RSpec.describe Gratitudes do
     result = gratitude.format
     expect(result).to eq "Be grateful for: "
   end
+
+  it "returns Be grateful for: " do 
+    gratitude = Gratitudes.new
+    gratitude.add("shelter")
+    result = gratitude.format 
+    expect(result).to eq "Be grateful for: shelter"
+  end
 end
     
