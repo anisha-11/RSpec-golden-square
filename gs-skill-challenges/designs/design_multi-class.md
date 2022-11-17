@@ -150,8 +150,44 @@ _Create examples of the classes being used together in different situations and
 combinations that reflect the ways in which the system will be used._
 
 ```ruby
+diary_tracker = DiaryTracker.new 
+diary_entry_1 = Diaryentry.new("title", "contents")
+diary_entry_2 = Diaryentry.new ("title 2", "contents 2")
+diary_tracker.add_entry(diary_entry_1) 
+diary_tracker.add_entry(diary_entry_2)
+diary_tracker.diary_list >> [diary_entry_1, diary_entry_2]
 
+diary_tracker = DiaryTracker.new 
+diary_entry_1 = Diaryentry.new("title", "contents")
+diary_entry_2 = Diaryentry.new ("title 2", "contents 2")
+diary_entry_3 = Diaryentry.new ("title 3", "contents 3")
+diary_tracker.add_entry(diary_entry_1) 
+diary_tracker.add_entry(diary_entry_2)
+diary_tracker.add_entry(diary_entry_3)
+diary_tracker.diary_list >> [diary_entry_1, diary_entry_2, diary_entry_3]
 
+diary_tracker = DiaryTracker.new 
+diary_entry_1 = Diaryentry.new("title", "1 2")
+diary_entry_2 = Diaryentry.new ("title 2", "1 2 3")
+diary_entry_3 = Diaryentry.new ("title 3", "1")
+diary_tracker.add_entry(diary_entry_1) 
+diary_tracker.add_entry(diary_entry_2)
+diary_tracker.add_entry(diary_entry_3)
+diary_tracker.find_best_entry(3, 3) >> 1
+
+diary_tracker = DiaryTracker.new
+task_1 = Todo.new("shower")
+task_2 = Todo.new("brush hair")
+diary_tracker.add_task(task_1)
+diary_tracker.add_task(task_2)
+diary_tracker.task_list >> [task_1, task_2]
+
+diary_tracker = DiaryTracker.new 
+diary_entry_1 = Diaryentry.new("title", "07123456789")
+diary_entry_2 = Diaryentry.new ("title 2", "07987654321")
+diary_tracker.add_entry(diary_entry_1)
+diary_tracker.add_entry(diary_entry_2)
+diary_tracker.phone_number_list >> [07123456789, 07987654321]
 
 ```
 
@@ -161,6 +197,41 @@ _Create examples, where appropriate, of the behaviour of each relevant class at
 a more granular level of detail._
 
 ```ruby
+Todo
+
+task = Todo.new("shower")
+task.title >> "shower"
+
+DiaryEntry
+
+diary_entry = DiaryEntry.new("title", "contents")
+diary_entry.title >> "title"
+
+diary_entry = DiaryEntry.new("title", "contents")
+diary_entry.contents >> "contents"
+
+diary_entry = DiaryEntry.new("title", "")
+diary_entry.count_words >> 0
+
+diary_entry = DiaryEntry.new("title", "contents")
+diary_entry.count_words >> 1
+
+diary_entry = DiaryEntry.new("wpm", "minutes")
+diary_entry.reading_time(2) >> 1
+
+diary_entry = DiaryEntry.new("wpm", "minutes")
+diary_entry.reading_time(0) >> fail
+
+DiaryTracker
+
+diary_tracker = DiaryTracker.new
+diary_tracker.diary_list >> []
+
+diary_tracker = DiaryTracker.new
+diary_tracker.task_list >> []
+
+diary_tracker = DiaryTracker.new
+diary_tracker.phone_number_list >> []
 
 ```
 
