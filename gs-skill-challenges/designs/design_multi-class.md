@@ -128,7 +128,7 @@ class DiaryEntry
   # returns number of words from contents 
   end 
 
-  def reading_time
+  def reading_time(wpm)
   # returns time taken to read entries
   end 
 end 
